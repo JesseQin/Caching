@@ -97,5 +97,23 @@ namespace Microsoft.Framework.Caching.Memory
             });
             return options;
         }
+
+        /// <summary>
+        /// Adds inherited trigger and absolute expiration information.
+        /// </summary>
+        /// <param name="link"></param>
+        public static CacheEntryOptions AddEntryLink(this CacheEntryOptions options, IEntryLink link)
+        {
+            foreach (var trigger in link.Triggers)
+            {
+                options.AddExpirationTrigger(trigger);
+            }
+
+            if (link.AbsoluteExpiration.HasValue)
+            {
+                options.SetAbsoluteExpiration(link.AbsoluteExpiration.Value);
+            }
+            return options;
+        }
     }
 }

@@ -30,5 +30,9 @@ namespace Microsoft.Framework.Caching.Memory
                 AbsoluteExpiration = absoluteExpiration;
             }
         }
+
+        public void Dispose()
+        {
+        }
     }
 }

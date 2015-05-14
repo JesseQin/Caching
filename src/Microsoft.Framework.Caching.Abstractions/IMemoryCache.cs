@@ -7,6 +7,8 @@ namespace Microsoft.Framework.Caching.Memory
 {
     public interface IMemoryCache : IDisposable
     {
+        IEntryLink CreateLinkingScope();
+
         /// <summary>
         /// Create or overwrite an entry in the cache.
         /// </summary>

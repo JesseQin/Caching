@@ -448,5 +448,10 @@ namespace Microsoft.Framework.Caching.Memory
                 throw new ObjectDisposedException(typeof(MemoryCache).FullName);
             }
         }
+
+        public IEntryLink CreateLinkingScope()
+        {
+            return EntryLinkHelpers.FlowContext(new EntryLink());
+        }
     }
 }

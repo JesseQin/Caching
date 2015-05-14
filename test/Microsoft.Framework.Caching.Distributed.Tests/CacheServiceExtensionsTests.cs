@@ -71,6 +71,11 @@ namespace Microsoft.Framework.Caching.Distributed
 
         private class TestMemoryCache : IMemoryCache
         {
+            public IEntryLink CreateLinkingScope()
+            {
+                throw new NotImplementedException();
+            }
+
             public void Dispose()
             {
                 throw new NotImplementedException();
